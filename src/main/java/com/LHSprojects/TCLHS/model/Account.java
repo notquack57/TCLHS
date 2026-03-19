@@ -1,5 +1,5 @@
 package com.LHSprojects.TCLHS.model;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Account {
     private String id;
@@ -7,16 +7,14 @@ public class Account {
     private String lastName;
     private int gradeLevel;
     private String email;
-    private String password;
-    private String key; //placeholder 
+    private String key;
 
-    public Account(String id, String firstName, String lastName, int gradeLevel, String email, String password, String key){
+    public Account(String id, String firstName, String lastName, int gradeLevel, String email, String key){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gradeLevel = gradeLevel;
         this.email = email;
-        this.password = password;
         this.key = key;
     }
 
@@ -40,9 +38,11 @@ public class Account {
         return this.email;
     }
 
-    public boolean isValidLogin(String givenPassword){
-        return (givenPassword.equals(password));
+    public String getId() {
+        return id;
     }
+
+    /* Put this in service instead of model
 
     //calculates how many courses match between a student and tutor
     public int match(Student student, Tutor tutor) {
@@ -77,4 +77,5 @@ public class Account {
 
         return match;
     }
+    */
 }
