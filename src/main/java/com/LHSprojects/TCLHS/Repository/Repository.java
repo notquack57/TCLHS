@@ -8,7 +8,7 @@ package com.LHSprojects.TCLHS.Repository;
 
 import org.springframework.stereotype.Component;
 
-import com.LHSprojects.TCLHS.model.Account;
+import com.LHSprojects.TCLHS.model.Tutor;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
@@ -19,46 +19,46 @@ import java.util.List;
 @Component
 public class Repository {
 
-    private final ConcurrentHashMap<String, Account> cache = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, Tutor> cache = new ConcurrentHashMap<>();
 
     
-public List<Account> getAllAccounts() {
+public List<Tutor> getAllTutors() {
     return Collections.unmodifiableList(new ArrayList<>(cache.values()));
     }
 
     
-    public Account getAccount(String id) {
+    public Tutor getTutor(String id) {
         return cache.get(id);
     }
 
    
-    public void saveAccount(Account account) {
-        if (account == null || account.getId() == null) return;
-        cache.put(account.getId(), account);
+    public void saveTutor(Tutor tutor) {
+        if (tutor == null || tutor.getId() == null) return;
+        cache.put(tutor.getId(), tutor);
         }
 
     
-    public void deleteAccount(String id) {
+    public void deleteTutor(String id) {
             cache.remove(id);
     }
 
     
-    public void setAllAccounts(List<Account> accounts) {
+    public void setAllTutors(List<Tutor> tutors) {
         cache.clear();
-        if (accounts != null) {
-            for (Account acc : accounts) {
-                if (acc != null && acc.getId() != null) {
-                    cache.put(acc.getId(), acc);
+        if (tutors != null) {
+            for (Tutor tutor : tutors) {
+                if (tutor != null && tutor.getId() != null) {
+                    cache.put(tutor.getId(), tutor);
                 }
             }
         }
     }
 
     
-    public boolean updateIfExists(Account account) {
-        if (account == null || account.getId() == null) return false;
+    public boolean updateIfExists(Tutor tutor) {
+        if (tutor == null || tutor.getId() == null) return false;
 
-        return cache.replace(account.getId(), account) != null;
+        return cache.replace(tutor.getId(), tutor) != null;
     }
 
     public int size() {

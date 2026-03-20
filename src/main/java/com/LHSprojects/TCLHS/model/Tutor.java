@@ -40,4 +40,7 @@ public class Tutor {
     public int getNumRatings() {
         return this.numRatings;
     }
+    public String getId() {
+        return this.id;
+    }
 }
