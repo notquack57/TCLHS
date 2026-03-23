@@ -1,5 +1,6 @@
 package com.LHSprojects.TCLHS;
 
+import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,19 @@ public class TclhsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TclhsApplication.class, args);
+
+		
+			Repository repo = new Repository(); //waiting for paul's constructor
+			System.out.println(repo.getAllTutors().size());
+			
+			for (int i = 0; i < repo.getAllTutors().size(); i++) {
+				if (i = repo.getAllTutors().size() - 1) {
+					System.out.print(repo.getAllTutors.get(i));
+				} else {
+					System.out.print(repo.getAllTutors.get(i) + ", ");
+				}
+			}
+
 	}
 
 }
