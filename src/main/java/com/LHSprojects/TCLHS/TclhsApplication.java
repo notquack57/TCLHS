@@ -10,8 +10,5 @@ public class TclhsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TclhsApplication.class, args);
 
-			
-
-	}
 
 }
