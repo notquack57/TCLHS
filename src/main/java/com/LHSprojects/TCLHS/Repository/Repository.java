@@ -8,7 +8,7 @@ package com.LHSprojects.TCLHS.Repository;
 
 import org.springframework.stereotype.Component;
 
-import com.LHSprojects.TCLHS.model.Tutor;
+import com.LHSprojects.TCLHS.Model.Tutor;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
@@ -21,8 +21,9 @@ public class Repository {
 
     private final ConcurrentHashMap<String, Tutor> cache = new ConcurrentHashMap<>();
 
-    
-public List<Tutor> getAllTutors() {
+    public Repository(){}
+
+    public List<Tutor> getAllTutors() {
     return Collections.unmodifiableList(new ArrayList<>(cache.values()));
     }
 

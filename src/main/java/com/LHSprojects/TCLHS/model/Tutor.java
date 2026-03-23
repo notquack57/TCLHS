@@ -1,4 +1,4 @@
-package com.LHSprojects.TCLHS.model;
+package com.LHSprojects.TCLHS.Model;
 
 import java.util.ArrayList;
 
