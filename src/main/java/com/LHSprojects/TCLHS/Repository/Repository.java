@@ -21,8 +21,9 @@ public class Repository {
 
     private final ConcurrentHashMap<String, Tutor> cache = new ConcurrentHashMap<>();
 
-    
-public List<Tutor> getAllTutors() {
+    public Repository(){}
+
+    public List<Tutor> getAllTutors() {
     return Collections.unmodifiableList(new ArrayList<>(cache.values()));
     }
 

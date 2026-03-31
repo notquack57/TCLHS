@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>tclhs</title>
+  <title>tclhs — Register</title>
   <link rel="stylesheet" href="theme.css"/>
+
   <style>
     .auth-card {
       -webkit-box-shadow:0px 0px 105px 20px rgba(122, 150, 168, 0.9);
@@ -20,20 +21,72 @@ box-shadow: 0px 0px 105px 20px rgba(122, 150, 168,0.9);
   }
 
   </style>
+
+
+
 </head>
 <body class="auth-page">
   <canvas id="stars"></canvas>
 
-  <div class="auth-card" id="box">
+  <div class="auth-card">
     <h1 class="auth-logo">tclhs</h1>
 
-    <a href="login.html" class="btn btn-primary mb-1" style="display:flex; margin-bottom:0.75rem;">Sign in</a>
-    <a href="register.html" class="btn btn-primary" style="display:flex;">Register</a>
+    <form id="register-form" action="/api/auth/register" method="POST">
+
+      <!-- DATA: newUserEmail -->
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          placeholder="@seattleschools.org"
+          data-field="email"
+          required
+        />
+      </div>
+
+      <!-- DATA: newPassword -->
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="New Password"
+          data-field="password"
+          required
+        />
+      </div>
+
+      <!-- DATA: confirmPassword -->
+      <div class="form-group">
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          class="form-control"
+          placeholder="Confirm New Password"
+          data-field="confirmPassword"
+          required
+        />
+      </div>
+
+      <div style="margin-top:1.25rem;">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+
+    </form>
+
+    <p class="text-center mt-2" style="font-size:0.85rem; color:var(--text-muted);">
+      Already have an account? <a href="login.html" class="link">Sign in</a>
+    </p>
   </div>
 
 
 
-  <script>
+
+<script>
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
